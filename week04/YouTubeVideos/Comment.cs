@@ -1,21 +1,21 @@
 class Comment
 {
-    private string commenterName;
-    private string text;
+    private string _commenterName;
+    private string _text;
 
     public Comment(string commenterName, string text)
     {
-        this.commenterName = commenterName;
-        this.text = text;
+        _commenterName = commenterName;
+        _text = text;
     }
 
     public string GetCommenterName()
     {
-        return commenterName;
+        return _commenterName;
     }
 
     public string GetText()
     {
-        return text;
+        return _text;
     }
 }

@@ -12,21 +12,15 @@ Video video3 = new Video("Guitar Basics", "MusicPro", 900);
 video3.AddComment(new Comment("Grace", "Perfect for beginners."));
 video3.AddComment(new Comment("Hank", "My fingers hurt but worth it!"));
 video3.AddComment(new Comment("Ivy", "Can you do a part 2?"));
-video3.AddComment(new Comment("Jack", "Awesome lesson."));
 
-Video video4 = new Video("World Travel Vlog", "NomadLife", 600);
-video4.AddComment(new Comment("Kate", "This place looks amazing!"));
-video4.AddComment(new Comment("Leo", "Adding this to my bucket list."));
-video4.AddComment(new Comment("Mia", "What camera do you use?"));
-
-List<Video> videos = new List<Video> { video1, video2, video3, video4 };
+List<Video> videos = new List<Video> { video1, video2, video3 };
 
 foreach (Video video in videos)
 {
     Console.WriteLine($"Title: {video.GetTitle()}");
     Console.WriteLine($"Author: {video.GetAuthor()}");
     Console.WriteLine($"Length: {video.GetLengthInSeconds()} seconds");
-    Console.WriteLine($"Comments ({video.GetCommentCount()}):");
+    Console.WriteLine($"Comments ({video.GetNumberOfComments()}):");
     foreach (Comment comment in video.GetComments())
     {
         Console.WriteLine($"  {comment.GetCommenterName()}: {comment.GetText()}");
