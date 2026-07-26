@@ -10,8 +10,14 @@ Product keyboard = new Product("Mechanical Keyboard", "TEC-003", 89.99, 1);
 Product headphones = new Product("Headphones", "TEC-004", 149.99, 1);
 Product usbCable = new Product("USB-C Cable", "TEC-005", 9.99, 3);
 
-Order order1 = new Order(new List<Product> { laptop, mouse, keyboard }, alice);
-Order order2 = new Order(new List<Product> { headphones, usbCable }, bob);
+Order order1 = new Order(alice);
+order1.AddProduct(laptop);
+order1.AddProduct(mouse);
+order1.AddProduct(keyboard);
+
+Order order2 = new Order(bob);
+order2.AddProduct(headphones);
+order2.AddProduct(usbCable);
 
 List<Order> orders = new List<Order> { order1, order2 };
 
@@ -23,6 +29,6 @@ foreach (Order order in orders)
     Console.WriteLine("SHIPPING LABEL");
     Console.WriteLine(order.GetShippingLabel());
     Console.WriteLine();
-    Console.WriteLine($"Total Price: ${order.GetTotalPrice():F2}");
+    Console.WriteLine($"Total Price: ${order.GetTotalCost():F2}");
     Console.WriteLine(new string('-', 40));
 }
